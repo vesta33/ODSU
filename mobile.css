@@ -1,7 +1,7 @@
 /* General Mobile Adjustments */
 @media (max-width: 768px) {
     header .logo {
-        max-width: 80px;
+        max-width: 10px;
         height: auto;
         margin: 0 auto 0.5rem;
     }
