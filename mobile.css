@@ -1,88 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile-Friendly Header */
+header {
+    background-color: #34495e;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto 1rem auto;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Navigation Menu */
+nav {
+    background-color: #2c3e50;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 0.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #1abc9c;
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    padding: 1rem;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+}
+
+main p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.button {
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: #16a085;
+}
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
-    /* General Adjustments */
-    header {
-        flex-direction: column;
-        align-items: center; /* Center align logo and text */
-        justify-content: center;
-        padding: 1rem;
+    header h1 {
+        font-size: 1.2rem;
     }
-
-    .logo {
-        max-width: 80px; /* Reduce logo size */
-        height: auto; /* Maintain aspect ratio */
-        margin-bottom: 0.5rem; /* Add minimal space below the logo */
-    }
-
-    .text-content {
-        text-align: center; /* Center-align text */
-        font-size: 1.2rem; /* Increase text size */
-        line-height: 1.5; /* Improve readability */
-        margin: 0 auto; /* Center horizontally */
-        max-width: 90%; /* Limit text width for better layout */
-    }
-
-    .button-container {
-        display: flex;
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center;
-        gap: 1rem; /* Add spacing between buttons */
-        margin-top: 1.5rem; /* Adjust spacing above buttons */
-    }
-    
-    .button-container button {
-        background-color: #34495e;
-        color: #fff;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem; /* Slightly larger font */
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-    
-    .button-container button:hover {
-        background-color: #2c3e50; /* Change color on hover */
-    }    
 
     nav ul {
         flex-direction: column;
-        margin: 0;
-        padding: 0;
-        text-align: center; /* Center navigation items */
+        padding: 0.5rem;
     }
 
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0.25rem 0;
     }
 
-    main {
-        padding: 1rem;
+    main h2 {
+        font-size: 1.3rem;
     }
 
-    /* Mobile Specific */
-    .desktop-only {
-        display: none;
-    }
-
-    .mobile-only {
-        display: block;
-    }
-
-    .menu-toggle {
-        background: #34495e;
-        color: #fff;
-        border: none;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        cursor: pointer;
-        margin-bottom: 1rem;
-    }
-
-    .mobile-nav {
-        display: none;
-    }
-
-    .mobile-nav.open {
-        display: block;
+    main p {
+        font-size: 0.95rem;
     }
 }
