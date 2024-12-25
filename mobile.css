@@ -1,14 +1,31 @@
 @media (max-width: 768px) {
     /* General Adjustments */
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        background-image: url('pattern.png');
+        background-repeat: repeat;
+        background-size: cover;
+        color: #fff;
+        height: 12vh; /* Smaller, proportional height */
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Space out logo and text */
+        padding: 0 1rem;
+        box-sizing: border-box; /* Include padding in height calculation */
+        width: 100%; /* Full width */
     }
 
     .logo {
-        max-width: 100px; /* Set smaller width for the logo */
-        height: auto;     /* Ensure the logo scales proportionally */
-        margin-bottom: 1rem; /* Add space below the logo */
+        max-width: 80px; /* Reduce logo size */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 0.5rem; /* Add minimal space below the logo */
+    }
+
+    .text-content {
+        text-align: center; /* Center-align text */
+        font-size: 1.2rem; /* Increase text size */
+        line-height: 1.5; /* Improve readability */
+        margin: 0 auto; /* Center horizontally */
+        max-width: 90%; /* Limit text width for better layout */
     }
 
     .button-container {
@@ -16,7 +33,7 @@
         flex-direction: column; /* Stack buttons vertically */
         align-items: center;
         gap: 1rem; /* Add spacing between buttons */
-        margin-top: 1rem;
+        margin-top: 1.5rem; /* Adjust spacing above buttons */
     }
     
     .button-container button {
@@ -24,7 +41,7 @@
         color: #fff;
         border: none;
         padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+        font-size: 1.1rem; /* Slightly larger font */
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s;
@@ -37,6 +54,8 @@
     nav ul {
         flex-direction: column;
         margin: 0;
+        padding: 0;
+        text-align: center; /* Center navigation items */
     }
 
     nav ul li {
