@@ -13,38 +13,37 @@ body {
     background-repeat: repeat;
     background-size: cover;
     color: #fff;
-    min-height: 150px; /* Use min-height instead of fixed height */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center;
-    text-align: center; /* Center-align text for smaller screens */
-    padding: 1rem; /* Add padding to avoid text being cut off */
-  }
-  
-  .header-content {
+    height: 12vh; /* Smaller, proportional height */
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    flex-wrap: wrap; /* Allow wrapping on smaller devices */
-  }
-  
-  .logo {
-    height: auto;
-    max-width: 20%;
-    margin-right: 1rem;
-    object-fit: contain;
-  }
-  
-  .text-content {
-    max-width: 80%;
-  }
-  
-  .text-content h1 {
-    word-wrap: break-word;
-    -webkit-hyphens: auto; /* Enable hyphenation */
-    hyphens: auto;
-  }
+    justify-content: space-between; /* Space out logo and text */
+    padding: 0 1rem;
+    box-sizing: border-box; /* Include padding in height calculation */
+    width: 100%; /* Full width */
+}
+
+ .header-content {
+    display: flex;
+    align-items: center; /* Vertically center align */
+    justify-content: space-between; /* Space logo and text */
+    width: 100%; /* Full width */
+}
+ .text-content {
+    flex: 1; /* Allow the text to take up remaining space */
+    text-align: center; /* Center-align text */
+}
+
+ .logo {
+    max-height: 80%; /* Ensure logo height is scaled properly */
+    max-width: 150px; /* Limit logo width */
+    height: auto; /* Maintain aspect ratio */
+    width: auto;
+    margin-top: 50px; /* Add space above the logo */
+    margin-bottom: 0px; /* Add space below the logo */
+    object-fit: contain; /* Ensure the logo is fully visible */
+}
+
+
   
   @media (max-width: 768px) {
     .text-content h1 {
@@ -58,7 +57,6 @@ body {
         font-size: 1.2rem; /* Further reduce font size for very small screens */
     }
   }
-  
   
   .text-content p {
     margin: 0.5rem 0 0;
