@@ -1,17 +1,10 @@
 @media (max-width: 768px) {
     /* General Adjustments */
     header {
-        background-image: url('pattern.png');
-        background-repeat: repeat;
-        background-size: cover;
-        color: #fff;
-        height: 12vh; /* Smaller, proportional height */
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Space out logo and text */
-        padding: 0 1rem;
-        box-sizing: border-box; /* Include padding in height calculation */
-        width: 100%; /* Full width */
+        flex-direction: column;
+        align-items: center; /* Center align logo and text */
+        justify-content: center;
+        padding: 1rem;
     }
 
     .logo {
