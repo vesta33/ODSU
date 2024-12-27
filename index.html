@@ -46,7 +46,11 @@
 <!-- Header -->
 <header>
 
-  <img src="images/logoODSU.webp" alt="Logo Image">
+  <!-- Fallback for browsers that don’t support WebP -->
+ <picture>
+   <source srcset="images/logoODSU.webp" type="image/webp">
+   <img src="images/logoOdsu.jpg" alt="Logo Image">
+ </picture>
  
   <h1>Ehitustööd</h1>
   <p>Teie usaldusväärne partner kõrgeima kvaliteediga ehitusvaldkonnas</p>
