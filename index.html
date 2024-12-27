@@ -34,6 +34,12 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+   .btn-group .btn {
+    min-width: 100px; /* Ensures consistent button sizes */
+    }
+   .btn-group .btn + .btn {
+    margin-left: 10px; /* Adjust spacing as needed */
+  }
   </style>
 </head>
 <body>
@@ -49,21 +55,70 @@
   <h1>Ehitustööd</h1>
   <p>Teie usaldusväärne partner kõrgeima kvaliteediga ehitusvaldkonnas</p>
 
-<!-- Language Switcher Dropdown -->
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="languageSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
-    Keel
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="languageSwitcher">
-    <li><a class="dropdown-item" href="index_en.html" data-lang="en">English</a></li>
-    <li><a class="dropdown-item" href="index_ru.html" data-lang="ru">Русский</a></li>
-    <li><a class="dropdown-item" href="index.html" data-lang="et">Eesti</a></li>
-  </ul>
-</div>
+    <!-- Navigation and Language Switcher -->
+    <div class="d-flex justify-content-center align-items-center mt-3">
+      <!-- Individual Buttons -->
+      <button class="btn btn-secondary me-2 rounded-2" type="button" onclick="showSection('services');">
+        Teenused
+      </button>
+      <button class="btn btn-secondary me-2 rounded-2" type="button" onclick="showSection('contact');">
+        Kontakt
+      </button>
+  
+      <!-- Language Switcher Dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle rounded-2" type="button" id="languageSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
+          Keel
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="languageSwitcher">
+          <li><a class="dropdown-item" href="index_en.html" data-lang="en">English</a></li>
+          <li><a class="dropdown-item" href="index_ru.html" data-lang="ru">Русский</a></li>
+          <li><a class="dropdown-item" href="index.html" data-lang="et">Eesti</a></li>
+        </ul>
+      </div>
+    </div>
 </header>
 
+<!-- Default Message -->
+<div id="defaultMessage" class="text-center mt-4">
+  <p class="text-center mt-4">
+    Üle 10-aastase kogemusega ehitustööstuses on ODSU loonud maine kvaliteetsete, usaldusväärsete ja tõhusate teenuste pakkumisel. Olenemata sellest, kas plaanite uut ehitist, renoveerite oma ruumi või vajate ekspertide remonditöid, oleme siin, et aidata teie visioon ellu viia.
+  </p>
+
+  <!-- Row for Four Pictures -->
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <img src="images/construction1.webp" alt="Construction Image 1" class="img-fluid rounded" style="max-width: 90%;">
+        <p class="mt-2">Professionaalsed ehitusteenused.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="images/construction2.webp" alt="Construction Image 2" class="img-fluid rounded" style="max-width: 90%;">
+        <p class="mt-2">Kvaliteetne renoveerimine.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="images/construction3.webp" alt="Construction Image 3" class="img-fluid rounded" style="max-width: 90%;">
+        <p class="mt-2">Professionaalsed lahendused.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="images/construction4.webp" alt="Construction Image 4" class="img-fluid rounded" style="max-width: 90%;">
+        <p class="mt-2">Usaldusväärsed teenused.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-center mt-4">
+    ODSU ühendab oskused, uuenduslikkuse ja kliendikeskse lähenemise, et tagada iga projekti õigeaegne, eelarve piires ja kõrgeima kvaliteedistandardiga teostamine.
+  </p>
+
+  <p class="text-center font-weight-bold">
+    Laske meil aidata teil luua inspireerivaid ja vastupidavaid ruume. Võtke meiega ühendust juba täna, et arutada oma projekti ja avastada, kuidas saame teie ideed ellu viia.
+  </p>
+</div>
+
+
 <!-- Services Section -->
-<section class="container mt-4">
+<section id="services" class="container mt-4">
   <h2 class="text-center mb-4">Meie teenused</h2>
   <div class="row">
     <div class="col-12 col-md-6">
@@ -102,7 +157,7 @@
 </section>
 
 <!-- Contact Section -->
-<section class="container mt-4">
+<section  id="contact" class="container mt-4">
   <h2 class="text-center mb-4">Võtke meiega ühendust</h2>
   <h3 class="text-center mb-4">+372 58 436 140</h3>
   <form id="contactForm">
@@ -115,7 +170,7 @@
       <input type="email" class="form-control" id="email" placeholder="Sisetage oma e-posti aadress" required>
     </div>
     <div class="mb-3">
-      <label for="phone" class="form-label">НTelefoninumber</label>
+      <label for="phone" class="form-label">Telefoninumber</label>
       <input type="phone" class="form-control" id="phone" placeholder="Sisetage oma telefoninumber" required>
     </div>
     <div class="mb-3">
@@ -129,7 +184,7 @@
 
 <!-- Footer -->
 <footer>
-  <p>&copy; 2024 ODSU Строительные работы. Все права защищены.</p>
+  <p>&copy; 2024 ODSU Ehitustööd. Kõik õigused on kaitstud.</p>
 </footer>
 
 <!-- Bootstrap JS -->
@@ -162,6 +217,39 @@
         alert('Не удалось отправить письмо. Попробуйте еще раз.');
         console.error(error);
       });
+  });
+
+ //To hide sections not needed
+ function showSection(sectionId) {
+    // Get all sections
+    const sections = document.querySelectorAll('section');
+    const defaultMessage = document.getElementById('defaultMessage');
+    
+    // Hide the default message
+    defaultMessage.style.display = 'none';
+
+    // Loop through sections and hide all except the selected one
+    sections.forEach(section => {
+      if (section.id === sectionId) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  }
+
+  // Initialize: Show default message on load
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const defaultMessage = document.getElementById('defaultMessage');
+    
+    // Hide all sections
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // Show the default message
+    defaultMessage.style.display = 'block';
   });
 </script>
 
